@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎉 Мой Вишлист на День Рождения! 🎂</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(-45deg, #ff00cc, #333399, #00e5ff, #ff9900);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 25px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .wishlist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 50px;
+        }
+
+        .gift-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            text-decoration: none;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gift-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+
+        .gift-card:hover::before {
+            left: 100%;
+        }
+
+        .gift-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: #ffffff;
+            box-shadow: 0 15px 40px rgba(255, 0, 204, 0.4), 0 0 20px rgba(0, 229, 255, 0.4);
+        }
+
+        .gift-icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
+        }
+
+        .gift-card:hover .gift-icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .gift-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .gift-btn {
+            background: linear-gradient(90deg, #ff00cc, #00e5ff);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .gift-card:hover .gift-btn {
+            background: linear-gradient(90deg, #00e5ff, #ff00cc);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .gift-card {
+            animation: fadeInUp 0.6s ease-out backwards;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .gift-card:nth-child(1) { animation-delay: 0.1s; }
+        .gift-card:nth-child(2) { animation-delay: 0.15s; }
+        .gift-card:nth-child(3) { animation-delay: 0.2s; }
+        .gift-card:nth-child(4) { animation-delay: 0.25s; }
+        .gift-card:nth-child(5) { animation-delay: 0.3s; }
+        .gift-card:nth-child(6) { animation-delay: 0.35s; }
+        .gift-card:nth-child(7) { animation-delay: 0.4s; }
+        .gift-card:nth-child(8) { animation-delay: 0.45s; }
+        .gift-card:nth-child(9) { animation-delay: 0.5s; }
+        .gift-card:nth-child(10) { animation-delay: 0.55s; }
+        .gift-card:nth-child(11) { animation-delay: 0.6s; }
+        .gift-card:nth-child(12) { animation-delay: 0.65s; }
+        .gift-card:nth-child(13) { animation-delay: 0.7s; }
+        .gift-card:nth-child(14) { animation-delay: 0.75s; }
+        .gift-card:nth-child(15) { animation-delay: 0.8s; }
+        .gift-card:nth-child(16) { animation-delay: 0.9s; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .subtitle { font-size: 1rem; padding: 10px 15px; }
+            .wishlist-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>🎉 Мой Вишлист 🎂</h1>
+        <p class="subtitle">
+            Привет! 🥳 Я составила этот список подарков, которые сделают мой День Рождения по-настоящему волшебным. 
+            Выбирай любой вариант, и я буду безумно счастлива! ❤️
+        </p>
+    </header>
+
+    <main class="wishlist-grid">
+        <!-- 🎁 КАРТОЧКА 1 -->
+        <a href="https://www.wildberries.ru/catalog/1289962479/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🎁</div>
+            <div class="gift-title">Техно-сюрприз (Флешка)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 2 -->
+        <a href="https://www.wildberries.ru/catalog/316449391/detail.aspx?size=477312233" target="_blank" class="gift-card">
+            <div class="gift-icon">👟</div>
+            <div class="gift-title">Королевский выбор (Пиджак)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 3 -->
+        <a href="https://www.wildberries.ru/catalog/220020044/detail.aspx?size=349869094" target="_blank" class="gift-card">
+            <div class="gift-icon">👕</div>
+            <div class="gift-title">Стильный подарок (Ещё пиждак)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 4 -->
+        <a href="https://www.wildberries.ru/catalog/1333062135/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🎧</div>
+            <div class="gift-title">Супер вещь (Жилетка классическая)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 5 -->
+        <a href="https://www.wildberries.ru/catalog/126050166/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🎨</div>
+            <div class="gift-title">Отличный подарок (Блузка)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 6 -->
+        <a href="https://www.wildberries.ru/catalog/1301147071/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🏠</div>
+            <div class="gift-title">Милая вещь (Рубашка)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 7 -->
+        <a href="https://www.wildberries.ru/catalog/904290635/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">✨</div>
+            <div class="gift-title">Блестящий вариант (Костюм брючный)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 8 -->
+        <a href="https://www.wildberries.ru/catalog/886843283/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🎒</div>
+            <div class="gift-title">Полезная штука (Футболка)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 9 -->
+        <a href="https://www.wildberries.ru/catalog/493969136/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🧸</div>
+            <div class="gift-title">Красивый подарок (Футболка)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 10 -->
+        <a href="https://www.wildberries.ru/catalog/458248055/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🕹️</div>
+            <div class="gift-title">Подарок для души (Духи)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 11 -->
+        <a href="https://www.wildberries.ru/catalog/574649617/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">👑</div>
+            <div class="gift-title">Прекрасный выбор (Чехол)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 12 -->
+        <a href="https://www.wildberries.ru/catalog/1561603095/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🚀</div>
+            <div class="gift-title">Космический вариант (Худи)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 13 -->
+        <a href="https://www.wildberries.ru/catalog/83458555/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">☕</div>
+            <div class="gift-title">Для уютных вечеров  (Чай)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 14 -->
+        <a href="https://www.wildberries.ru/catalog/413717375/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🎵</div>
+            <div class="gift-title">Спортивный сюрприз (Спортивки)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+
+        <!-- 🎁 КАРТОЧКА 15 -->
+        <a href="https://www.wildberries.ru/catalog/1221109843/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🌟</div>
+            <div class="gift-title"> Необычный подарок (Выпрямитель)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+        </a>
+        <!-- 🎁 КАРТОЧКА 16 -->
+        <a href="https://www.wildberries.ru/catalog/228777231/detail.aspx" target="_blank" class="gift-card">
+            <div class="gift-icon">🔥</div>
+            <div class="gift-title">Идеальный финал (Ветровка)</div>
+            <div class="gift-btn">Посмотреть на WB</div>
+    </main>
+
+    <footer style="text-align: center; margin-top: 40px; opacity: 0.8; font-size: 1.1rem; padding-bottom: 20px;">
+        <p>Спасибо, что делаешь мой праздник особенным! 🥰🎈</p>
+    </footer>
+
+</body>
+</html>
